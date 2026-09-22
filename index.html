@@ -1,119 +1,325 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nguyễn Việt Anh – Portfolio</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap' rel='stylesheet'><style>:root{--acc:#1a7f37}
-*{margin:0;padding:0;box-sizing:border-box}
-img{max-width:100%}
-.container{max-width:1180px;margin:0 auto;padding:0 28px}
-.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px 40px}
-.skill span{font-size:.92rem;display:flex;justify-content:space-between}
-.skill em{font-style:normal;opacity:.65;font-size:.82rem}
-.bar{height:8px;border-radius:99px;background:rgba(128,128,128,.2);margin-top:7px;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:99px;background:var(--acc);animation:grow 1.2s ease}
-@keyframes grow{from{width:0}}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chips span{padding:7px 18px;border-radius:999px;border:1px solid var(--acc);font-size:.88rem;opacity:.9}
-.tl{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--acc)}
-.tl-item{position:relative;margin-bottom:24px}
-.tl-item::before{content:"";position:absolute;left:-35px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(128,128,128,.12)}
-.tl-year{font-weight:700;color:var(--acc);font-size:1.02rem}
-.tl-item p{margin-top:4px;font-size:.95rem;opacity:.9}
-.quote{margin-top:16px;padding:14px 22px;border-left:4px solid var(--acc);font-style:italic;opacity:.92;font-size:1.02rem}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
-@media(max-width:860px){.twocol{grid-template-columns:1fr}}
-.topnav{position:sticky;top:0;z-index:60;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;
- padding:10px 60px 10px 16px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-.topnav a{padding:6px 15px;border-radius:999px;font-size:.86rem;font-weight:600;color:inherit;text-decoration:none;opacity:.8}
-.topnav a:hover{background:var(--acc);color:#fff;opacity:1}
-.awgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:16px}
-@media(max-width:520px){.awgrid{grid-template-columns:1fr}}
-.award{display:flex;gap:16px;align-items:flex-start;border-left:5px solid var(--acc) !important;margin-bottom:0 !important}
-.medal{font-size:1.9rem;width:56px;height:56px;flex:0 0 56px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(128,128,128,.1)}
-.rk-gold{border-left-color:#f59e0b !important}.rk-gold .medal{background:linear-gradient(135deg,#fef3c7,#fcd34d)}
-.rk-silver{border-left-color:#94a3b8 !important}.rk-silver .medal{background:linear-gradient(135deg,#f1f5f9,#cbd5e1)}
-.rk-bronze{border-left-color:#c2703d !important}.rk-bronze .medal{background:linear-gradient(135deg,#fde8d7,#e8b48c)}
-.rk-merit{border-left-color:#818cf8 !important}.rk-merit .medal{background:linear-gradient(135deg,#e0e7ff,#c7d2fe)}
-.rklab{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.75;margin-bottom:4px}
-.rk-gold .rklab{color:#b45309}.rk-silver .rklab{color:#64748b}.rk-bronze .rklab{color:#9a5b2d}.rk-merit .rklab{color:#6366f1}
-.awbody{flex:1}
-.awthumb{flex:0 0 92px;width:92px;height:92px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.15);display:block}
-.awthumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.awthumb:hover img{transform:scale(1.12)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-.subtitle{opacity:.65;font-size:.95rem;margin:-14px 0 20px}
-.lb{position:fixed;inset:0;background:rgba(8,8,12,.88);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out}
-.lb.open{display:flex}
-.lb img{max-width:93vw;max-height:92vh;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
-.pts{margin:12px 0 2px 20px;font-size:.93rem}
-.pts li{margin-bottom:7px;opacity:.92}
-.pts li::marker{color:var(--acc)}
-body.lay-split header .container{display:grid;grid-template-columns:auto 1fr;column-gap:48px;row-gap:2px;text-align:left;align-items:center;justify-items:start}
-body.lay-split header .avatar,body.lay-split header .monogram{grid-row:1/5;margin-bottom:0}
-body.lay-split header .stats{justify-content:flex-start;margin-top:22px}
-@media(max-width:760px){body.lay-split header .container{display:block;text-align:center}}
-body.aw-list .awgrid{grid-template-columns:1fr}
-body.aw-list .awthumb{flex:0 0 128px;width:128px;height:128px}
-body.act-zig .actwrap .card{width:94%}
-body.act-zig .actwrap .card:nth-child(even){margin-left:6%;border-left-width:6px;border-left-style:solid;border-left-color:var(--acc)}
-body.act-zig .actwrap .card:nth-child(odd){border-right:6px solid var(--acc)}
-section{padding:44px 0 6px}
-.stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
-.doclinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:14px}
-.gallery a{display:block;aspect-ratio:4/3;overflow:hidden}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.gallery a:hover img{transform:scale(1.07)}
-.certgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.certimg{max-width:520px;width:100%;margin-top:14px}
-.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover}
-.monogram{width:132px;height:132px;display:inline-flex;align-items:center;justify-content:center;font-size:44px;font-weight:700}
-.lang-switch{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:2px;border-radius:999px;padding:4px}
-.lbtn{border:0;background:transparent;padding:5px 14px;border-radius:999px;cursor:pointer;font-size:.85rem;font-weight:700}
-.pane-en{display:none}
-body.lang-en .pane-en{display:block}
-body.lang-en .pane-vi{display:none}
-footer{margin-top:56px;padding:28px 0;text-align:center;font-size:.85rem}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nguyễn Việt Anh — Informatics &amp; AI/IoT Portfolio</title>
+<meta name="description" content="Student portfolio of Nguyễn Việt Anh — Hanoi–Amsterdam High School for the Gifted. Competitive programming, computer vision and IoT. HSGS Olympiad Gold, AI-JAM US 2026 Gold, AXGO 2026 Grand Prix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
 
-body{font-family:'Fira Code',Consolas,monospace;background:#f6f8fa;color:#1f2328;line-height:1.7}
-header{padding:70px 0 50px;background:linear-gradient(180deg,#eaf3fb,#f6f8fa)}
-.term{max-width:1020px;margin:0 auto;background:#ffffff;border:1px solid #d0d7de;border-radius:12px;overflow:hidden;
- box-shadow:0 18px 50px rgba(31,35,40,.14)}
-.term-bar{display:flex;align-items:center;gap:8px;background:#f6f8fa;padding:11px 16px;border-bottom:1px solid #d0d7de}
-.term-bar i{width:12px;height:12px;border-radius:50%;display:block}
-.term-bar i:nth-child(1){background:#ff5f56}.term-bar i:nth-child(2){background:#ffbd2e}.term-bar i:nth-child(3){background:#27c93f}
-.term-bar span{margin-left:10px;color:#656d76;font-size:.8rem}
-.term-body{padding:28px 30px;text-align:left}
-.prompt{color:#1a7f37;font-weight:600}
-.cmd{color:#1f2328}
-h1{font-size:2rem;color:#0969da;margin:6px 0 2px;font-weight:600}
-h1::after{content:"▊";color:#1a7f37;animation:caret 1.1s steps(1) infinite;margin-left:6px}
-@keyframes caret{50%{opacity:0}}
-.school{color:#656d76;font-size:.92rem}
-.tagline{margin-top:14px;display:inline-block;color:#8250df;font-size:.9rem}
-.tagline::before{content:"// "}
-.avatar{border:2px solid #d0d7de;width:96px;height:96px;float:right;margin-left:18px}
-.monogram{display:none}
-.stats{justify-content:flex-start;margin-top:22px;gap:12px}
-.stat{background:#f6f8fa;border:1px solid #d0d7de;border-radius:8px;padding:12px 18px;min-width:150px}
-.stat b{display:block;font-size:1.3rem;color:#bc4c00}
-.stat span{color:#656d76;font-size:.78rem}
-h2{font-size:1.25rem;margin-bottom:20px;color:#57606a;font-weight:600}
-h2::before{content:"## ";color:#1a7f37}
-.card{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:20px 22px;margin-bottom:14px;box-shadow:0 2px 8px rgba(31,35,40,.05);transition:border-color .15s,box-shadow .15s}
-.card:hover{border-color:#0969da;box-shadow:0 6px 18px rgba(9,105,218,.12)}
-.card h3{font-size:1rem;color:#0969da;font-weight:600}
-.card h3::before{content:"> ";color:#1a7f37}
-.card .org{color:#656d76;font-size:.85rem}
-.card p{margin-top:10px;color:#424a53;font-size:.9rem}
-.badge{display:inline-block;background:#dafbe1;color:#1a7f37;border:1px solid #aceebb;padding:2px 10px;border-radius:6px;font-size:.75rem;margin-bottom:8px}
-a{color:#0969da;text-decoration:none}
-.doclinks a{background:#f6f8fa;border:1px solid #d0d7de;padding:6px 13px;border-radius:6px;font-size:.8rem}
-.doclinks a:hover{border-color:#1a7f37;color:#1a7f37}
-.gallery a{border-radius:8px;border:1px solid #d0d7de}
-.research{border-left:3px solid #8250df}
-.doi{font-size:.8rem;color:#656d76}
-.empty{color:#6e7781;font-style:italic;background:#fff;border:1px dashed #d0d7de;border-radius:8px;padding:16px 20px}
-.empty::before{content:"/* "}.empty::after{content:" */"}
-footer{border-top:1px solid #d8dee4;color:#6e7781;font-size:.8rem}
-.lang-switch{background:rgba(255,255,255,.92);border:1px solid #d0d7de;box-shadow:0 3px 10px rgba(31,35,40,.08)}
-.lbtn{color:#656d76;font-family:'Fira Code',monospace}.lbtn.active{background:#1f883d;color:#fff}
-.certimg{border-radius:8px;border:1px solid #d0d7de}
-</style></head><body class='lay-center aw-grid act-zig'><div class='lang-switch'><button class='lbtn' data-l='en'>EN</button><button class='lbtn' data-l='vi'>VI</button></div><div class='pane-vi' lang='vi'><header><div class='container'><div class='term'><div class='term-bar'><i></i><i></i><i></i><span>nguyenvietanh@portfolio:~</span></div><div class='term-body'><img class='avatar' src='assets/img/avatar.jpg' alt='Nguyễn Việt Anh'><div><span class='prompt'>$</span> <span class='cmd'>whoami</span></div><h1>Nguyễn Việt Anh</h1><div class='school'>THPT chuyên Hà Nội – Amsterdam · Lớp 11 Tin 1</div><div class='tagline'>Học sinh chuyên Tin · Huy chương Vàng HSGS Olympiad · Competitive Programming</div><div><br><span class='prompt'>$</span> <span class='cmd'>cat achievements.json</span></div><div class='stats'><div class='stat'><b>HCV</b><span>HSGS Olympiad – Tin học 2025</span></div><div class='stat'><b>Giải Ba</b><span>HSG TP Hà Nội lớp 12 (2025–26)</span></div><div class='stat'><b>Giải Ba</b><span>Olympic ĐHQGHN – Tin học</span></div></div></div></div></div></header><nav class='topnav'><a href='#about-vi'>Giới thiệu</a><a href='#awards-vi'>Thành tích</a><a href='#journey-vi'>Hành trình</a><a href='#activities-vi'>Hoạt động</a><a href='#skills-vi'>Kỹ năng</a></nav><main class='container'><section id='about-vi'><h2>Giới thiệu</h2><div class='card'><p style='margin-top:0'>Mình là Nguyễn Việt Anh, học sinh lớp 11 Tin 1, trường THPT chuyên Hà Nội – Amsterdam. Mình theo đuổi lập trình thi đấu (competitive programming) từ THCS và đã đạt nhiều giải thưởng Tin học các cấp: Huy chương Vàng HSGS Olympiad, giải Ba HSG Thành phố Hà Nội lớp 12 và giải Ba Olympic bậc THPT của ĐHQG Hà Nội khi mới học lớp 11. Mình cũng tích cực tham gia hoạt động thiện nguyện vì trẻ em.</p><blockquote class='quote'>“Mỗi bài toán khó đều có lời giải — chỉ cần đủ kiên nhẫn để debug.”</blockquote></div></section><section id='awards-vi'><h2>Thành tích & Giải thưởng</h2><div class='awgrid'><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Vàng · Gold</span><h3>Huy chương Vàng môn Tin học – HSGS Olympiad (Olympic Chuyên KHTN)</h3><div class='org'>THPT Chuyên KHTN &amp; ĐH Khoa học Tự nhiên, 05/2025</div></div><a class='awthumb' href='assets/img/award-huy-chuong-vang-mon-tin-hoc-hsgs-olympiad-olympic-.jpg'><img src='assets/img/award-huy-chuong-vang-mon-tin-hoc-hsgs-olympiad-olympic-.jpg' alt='Huy chương Vàng môn Tin học – HSGS Olympiad (Olympic Chuyên KHTN)' loading='lazy'></a></div><div class='card award reveal rk-bronze'><div class='medal'>🥉</div><div class='awbody'><span class='rklab'>Đồng · Bronze</span><h3>Giải Ba kỳ thi chọn HSG Thành phố các môn văn hóa lớp 12 – môn Tin học (2025–2026)</h3><div class='org'>Sở GD&amp;ĐT Hà Nội – khi đang học lớp 11</div></div><a class='awthumb' href='assets/img/award-giai-ba-ky-thi-chon-hsg-thanh-pho-cac-mon-van-hoa-.jpg'><img src='assets/img/award-giai-ba-ky-thi-chon-hsg-thanh-pho-cac-mon-van-hoa-.jpg' alt='Giải Ba kỳ thi chọn HSG Thành phố các môn văn hóa lớp 12 – môn Tin học (2025–2026)' loading='lazy'></a></div><div class='card award reveal rk-bronze'><div class='medal'>🥉</div><div class='awbody'><span class='rklab'>Đồng · Bronze</span><h3>Giải Ba kỳ thi Olympic bậc THPT của ĐHQG Hà Nội – môn Tin học (2025–2026)</h3><div class='org'>Đại học Quốc gia Hà Nội</div></div></div><div class='card award reveal rk-silver'><div class='medal'>🥈</div><div class='awbody'><span class='rklab'>Bạc · Silver</span><h3>Giải Nhì kỳ thi HSG cấp quận môn Tin học (2023–2024)</h3><div class='org'>Phòng GD&amp;ĐT Quận Cầu Giấy – THCS Archimedes Academy</div></div><a class='awthumb' href='assets/img/award-giai-nhi-ky-thi-hsg-cap-quan-mon-tin-hoc-2023-2024.jpg'><img src='assets/img/award-giai-nhi-ky-thi-hsg-cap-quan-mon-tin-hoc-2023-2024.jpg' alt='Giải Nhì kỳ thi HSG cấp quận môn Tin học (2023–2024)' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Vàng · Gold</span><h3>Gold Award – AI-JAM US 2026 (Cuộc thi Sáng chế AI Quốc tế lần thứ 11)</h3><div class='org'>Dự án “MediCare Hub – All-in-One Smart Home Healthcare Ecosystem”, 09/2026</div></div><a class='awthumb' href='assets/img/award-gold-award-ai-jam-us-2026-medicare-hub.jpg'><img src='assets/img/award-gold-award-ai-jam-us-2026-medicare-hub.jpg' alt='Gold Award – AI-JAM US 2026' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Grand Prix</span><h3>Grand Prix Award – AXGO AX Global Olympiad 2026</h3><div class='org'>Dự án “AI Table Tennis Coach”, 07/2026</div></div><a class='awthumb' href='assets/img/award-grand-prix-award-axgo-2026-ai-table-tennis-coach.jpg'><img src='assets/img/award-grand-prix-award-axgo-2026-ai-table-tennis-coach.jpg' alt='Grand Prix Award – AXGO AX Global Olympiad 2026' loading='lazy'></a></div></div></section><section id='journey-vi'><h2>Hành trình</h2><div class='card reveal'><div class='tl'><div class='tl-item'><span class='tl-year'>2023</span><p>Giải Nhì kỳ thi HSG cấp quận môn Tin học (Quận Cầu Giấy) khi học lớp 9 tại THCS Archimedes Academy.</p></div><div class='tl-item'><span class='tl-year'>2024</span><p>Trúng tuyển lớp chuyên Tin, THPT chuyên Hà Nội – Amsterdam.</p></div><div class='tl-item'><span class='tl-year'>2025</span><p>Huy chương Vàng môn Tin học tại HSGS Olympiad (05/2025); Giải Ba HSG Thành phố lớp 12 môn Tin học khi đang học lớp 11 (10/2025).</p></div><div class='tl-item'><span class='tl-year'>2026</span><p>Giải Ba Olympic bậc THPT của ĐHQG Hà Nội môn Tin học (01/2026); thiện nguyện tại Bệnh viện Nhi Trung ương; Grand Prix AXGO AX Global Olympiad với dự án “AI Table Tennis Coach” (07/2026); Gold Award AI-JAM US với dự án “MediCare Hub” (09/2026); phát triển ý tưởng “Hệ thống an toàn cho ô tô”.</p></div></div><a href='assets/img/journey-roadmap.jpg'><img class='certimg' style='max-width:100%;margin-top:14px' src='assets/img/journey-roadmap.jpg' alt='journey roadmap' loading='lazy'></a></div></section><section id='activities-vi'><h2>Hoạt động ngoại khóa & Dự án</h2><div class='actwrap'><div class='card reveal'><h3>Sản phẩm cá nhân: Hệ thống an toàn cho ô tô (AI + IoT)</h3><p>Thiết kế hệ thống an toàn toàn diện cho ô tô gồm: hệ thống đo mức độ tập trung của người lái xe bằng thiết bị đeo tai kết hợp camera xử lý ảnh; các cảm biến phát hiện trẻ em bị bỏ quên trên xe; cảm biến phát hiện chất độc hại trong khoang xe như cồn, khói thuốc lá, nhiệt độ cao, khí CO2…; và mô-đun dự đoán nguy hiểm xung quanh xe bằng công nghệ AI kết hợp cảm biến IoT.</p><ul class='pts'><li>Đo mức độ tập trung của người lái xe bằng thiết bị đeo tai kết hợp camera xử lý ảnh.</li><li>Cụm cảm biến phát hiện trẻ em bị bỏ quên trên xe.</li><li>Phát hiện tác nhân nguy hiểm trong khoang xe: nồng độ cồn, khói thuốc lá, nhiệt độ cao, khí CO2…</li><li>Dự đoán nguy hiểm xung quanh ô tô bằng công nghệ AI kết hợp mạng cảm biến IoT.</li></ul><div class='gallery'><a href='assets/img/act0-0.jpg'><img src='assets/img/act0-0.jpg' alt='Sản phẩm cá nhân: Hệ thống an toàn cho ô tô (AI + IoT)' loading='lazy'></a></div></div><div class='card reveal'><h3>Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)</h3><p>Tham gia thăm hỏi, tặng quà và tổ chức hoạt động cho các bệnh nhi đang điều trị tại Bệnh viện Nhi Trung ương, Hà Nội.</p><div class='gallery'><a href='assets/img/act1-0.jpg'><img src='assets/img/act1-0.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-1.jpg'><img src='assets/img/act1-1.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-2.jpg'><img src='assets/img/act1-2.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-3.jpg'><img src='assets/img/act1-3.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-4.jpg'><img src='assets/img/act1-4.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-5.jpg'><img src='assets/img/act1-5.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-6.jpg'><img src='assets/img/act1-6.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a><a href='assets/img/act1-7.jpg'><img src='assets/img/act1-7.jpg' alt='Thiện nguyện tại Bệnh viện Nhi Trung ương (2026)' loading='lazy'></a></div></div><div class='card reveal'><h3>Trải nghiệm ngoại khóa Tuyên Quang 2026</h3><p>Chuyến trải nghiệm ngoại khóa tại Tuyên Quang cùng học sinh nhiều trường: sinh hoạt chuyên đề tại hội trường, giao lưu và các hoạt động làm việc nhóm.</p><div class='gallery'><a href='assets/img/act2-0.jpg'><img src='assets/img/act2-0.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-1.jpg'><img src='assets/img/act2-1.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-2.jpg'><img src='assets/img/act2-2.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-3.jpg'><img src='assets/img/act2-3.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-4.jpg'><img src='assets/img/act2-4.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-5.jpg'><img src='assets/img/act2-5.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-6.jpg'><img src='assets/img/act2-6.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-7.jpg'><img src='assets/img/act2-7.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-8.jpg'><img src='assets/img/act2-8.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-9.jpg'><img src='assets/img/act2-9.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act2-10.jpg'><img src='assets/img/act2-10.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a></div></div></div></section><div class='twocol'><section id='skills-vi'><h2>Kỹ năng</h2><div class='card reveal'><div class='skillgrid' style='grid-template-columns:1fr'><div class='skill'><span>C++ &amp; lập trình thi đấu<em>95%</em></span><div class='bar'><i style='width:95%'></i></div></div><div class='skill'><span>Thuật toán &amp; cấu trúc dữ liệu<em>92%</em></span><div class='bar'><i style='width:92%'></i></div></div><div class='skill'><span>Python<em>75%</em></span><div class='bar'><i style='width:75%'></i></div></div><div class='skill'><span>Tư duy giải quyết vấn đề<em>90%</em></span><div class='bar'><i style='width:90%'></i></div></div><div class='skill'><span>Thiết kế hệ thống IoT<em>70%</em></span><div class='bar'><i style='width:70%'></i></div></div></div><a href='assets/img/skill-radar.jpg'><img class='certimg' style='max-width:100%;margin-top:20px' src='assets/img/skill-radar.jpg' alt='skill radar' loading='lazy'></a></div></section><section><h2>Sở thích & Quan tâm</h2><div class='card'><div class='chips'><span>Competitive programming</span><span>An toàn giao thông</span><span>AI ứng dụng</span><span>Thiện nguyện</span></div></div><h2 style='margin-top:26px'>Định hướng tương lai</h2><div class='card'><p style='margin-top:0'>Mục tiêu gần của mình là giành suất vào đội tuyển HSG Quốc gia môn Tin học. Xa hơn, mình muốn theo đuổi ngành Khoa học Máy tính, hiện thực hóa hệ thống an toàn ô tô bằng AI + IoT từ bản thiết kế thành nguyên mẫu chạy thật.</p></div></section></div></main><footer>© 2026 Nguyễn Việt Anh · Portfolio học sinh</footer></div><div class='pane-en' lang='en'><header><div class='container'><div class='term'><div class='term-bar'><i></i><i></i><i></i><span>nguyenvietanh@portfolio:~</span></div><div class='term-body'><img class='avatar' src='assets/img/avatar.jpg' alt='Nguyễn Việt Anh'><div><span class='prompt'>$</span> <span class='cmd'>whoami</span></div><h1>Nguyễn Việt Anh</h1><div class='school'>Hanoi – Amsterdam High School for the Gifted · Class 11 Informatics 1</div><div class='tagline'>Informatics-major student · HSGS Olympiad Gold Medalist · Competitive programming</div><div><br><span class='prompt'>$</span> <span class='cmd'>cat achievements.json</span></div><div class='stats'><div class='stat'><b>HCV</b><span>HSGS Olympiad Gold – Informatics 2025</span></div><div class='stat'><b>3rd Prize</b><span>Hanoi City Contest, Grade 12 (2025–26)</span></div><div class='stat'><b>3rd Prize</b><span>VNU Hanoi Olympiad – Informatics</span></div></div></div></div></div></header><nav class='topnav'><a href='#about-en'>About</a><a href='#awards-en'>Awards</a><a href='#journey-en'>Journey</a><a href='#activities-en'>Activities</a><a href='#skills-en'>Skills</a></nav><main class='container'><section id='about-en'><h2>About Me</h2><div class='card'><p style='margin-top:0'>I am Nguyen Viet Anh, a student of Class 11 Informatics 1 at Hanoi – Amsterdam High School for the Gifted. I have pursued competitive programming since middle school and have won Informatics awards at every level: a Gold Medal at the HSGS Olympiad, Third Prize at the Hanoi City Grade-12 Contest and Third Prize at the VNU Hanoi High-School Olympiad — all while still in grade 11. I also volunteer for children&#x27;s causes.</p><blockquote class='quote'>“Every hard problem has a solution — you just need the patience to debug it.”</blockquote></div></section><section id='awards-en'><h2>Honors & Awards</h2><div class='awgrid'><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Gold</span><h3>Gold Medal in Informatics – HSGS Olympiad</h3><div class='org'>HSGS &amp; VNU University of Science, May 2025</div></div><a class='awthumb' href='assets/img/award-huy-chuong-vang-mon-tin-hoc-hsgs-olympiad-olympic-.jpg'><img src='assets/img/award-huy-chuong-vang-mon-tin-hoc-hsgs-olympiad-olympic-.jpg' alt='Gold Medal in Informatics – HSGS Olympiad' loading='lazy'></a></div><div class='card award reveal rk-bronze'><div class='medal'>🥉</div><div class='awbody'><span class='rklab'>Bronze</span><h3>Third Prize – Hanoi City Excellent Student Contest, Grade-12 Informatics (2025–2026)</h3><div class='org'>Hanoi Department of Education &amp; Training – achieved while in grade 11</div></div><a class='awthumb' href='assets/img/award-giai-ba-ky-thi-chon-hsg-thanh-pho-cac-mon-van-hoa-.jpg'><img src='assets/img/award-giai-ba-ky-thi-chon-hsg-thanh-pho-cac-mon-van-hoa-.jpg' alt='Third Prize – Hanoi City Excellent Student Contest, Grade-12 Informatics (2025–2026)' loading='lazy'></a></div><div class='card award reveal rk-bronze'><div class='medal'>🥉</div><div class='awbody'><span class='rklab'>Bronze</span><h3>Third Prize – VNU Hanoi High-School Olympiad in Informatics (2025–2026)</h3><div class='org'>Vietnam National University, Hanoi</div></div></div><div class='card award reveal rk-silver'><div class='medal'>🥈</div><div class='awbody'><span class='rklab'>Silver</span><h3>Second Prize – District Excellent Student Contest in Informatics (2023–2024)</h3><div class='org'>Cau Giay District – Archimedes Academy Secondary School</div></div><a class='awthumb' href='assets/img/award-giai-nhi-ky-thi-hsg-cap-quan-mon-tin-hoc-2023-2024.jpg'><img src='assets/img/award-giai-nhi-ky-thi-hsg-cap-quan-mon-tin-hoc-2023-2024.jpg' alt='Second Prize – District Excellent Student Contest in Informatics (2023–2024)' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Gold</span><h3>Gold Award – AI-JAM US 2026 (11th International AI Invention Challenge)</h3><div class='org'>Project “MediCare Hub – All-in-One Smart Home Healthcare Ecosystem”, Sept 2026</div></div><a class='awthumb' href='assets/img/award-gold-award-ai-jam-us-2026-medicare-hub.jpg'><img src='assets/img/award-gold-award-ai-jam-us-2026-medicare-hub.jpg' alt='Gold Award – AI-JAM US 2026' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Grand Prix</span><h3>Grand Prix Award – AXGO AX Global Olympiad 2026</h3><div class='org'>Project “AI Table Tennis Coach”, Jul 2026</div></div><a class='awthumb' href='assets/img/award-grand-prix-award-axgo-2026-ai-table-tennis-coach.jpg'><img src='assets/img/award-grand-prix-award-axgo-2026-ai-table-tennis-coach.jpg' alt='Grand Prix Award – AXGO AX Global Olympiad 2026' loading='lazy'></a></div></div></section><section id='journey-en'><h2>Journey</h2><div class='card reveal'><div class='tl'><div class='tl-item'><span class='tl-year'>2023</span><p>Second Prize at the district Informatics contest (Cau Giay) while in grade 9 at Archimedes Academy.</p></div><div class='tl-item'><span class='tl-year'>2024</span><p>Admitted to the Informatics-major class at Hanoi – Amsterdam High School for the Gifted.</p></div><div class='tl-item'><span class='tl-year'>2025</span><p>Gold Medal in Informatics at the HSGS Olympiad (May 2025); Third Prize at the Hanoi City grade-12 Informatics contest while in grade 11 (Oct 2025).</p></div><div class='tl-item'><span class='tl-year'>2026</span><p>Third Prize at the VNU Hanoi High-School Olympiad in Informatics (Jan 2026); volunteered at the National Children&#x27;s Hospital; Grand Prix at the AXGO AX Global Olympiad with “AI Table Tennis Coach” (Jul 2026); Gold Award at AI-JAM US with “MediCare Hub” (Sept 2026); developing the “Car safety system” concept.</p></div></div><a href='assets/img/journey-roadmap.jpg'><img class='certimg' style='max-width:100%;margin-top:14px' src='assets/img/journey-roadmap.jpg' alt='journey roadmap' loading='lazy'></a></div></section><section id='activities-en'><h2>Extracurriculars & Projects</h2><div class='actwrap'><div class='card reveal'><h3>Personal project: Car safety system (AI + IoT)</h3><p>Designing a comprehensive car-safety system: a driver-attention monitor combining an ear-worn device with an image-processing camera; sensors detecting children left behind in the car; cabin sensors detecting hazards such as alcohol, cigarette smoke, high temperature and CO2; and an AI + IoT module predicting dangers around the vehicle.</p><ul class='pts'><li>Driver-attention measurement using an ear-worn device combined with an image-processing camera.</li><li>Sensor cluster detecting children accidentally left in the vehicle.</li><li>Cabin-hazard detection: alcohol vapour, cigarette smoke, high temperature, CO2 levels…</li><li>Danger prediction around the vehicle using AI combined with an IoT sensor network.</li></ul><div class='gallery'><a href='assets/img/act0-0.jpg'><img src='assets/img/act0-0.jpg' alt='Personal project: Car safety system (AI + IoT)' loading='lazy'></a></div></div><div class='card reveal'><h3>Volunteering at the National Children&#x27;s Hospital (2026)</h3><p>Visited, gave gifts and organized activities for young patients at the National Children&#x27;s Hospital, Hanoi.</p><div class='gallery'><a href='assets/img/act1-0.jpg'><img src='assets/img/act1-0.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-1.jpg'><img src='assets/img/act1-1.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-2.jpg'><img src='assets/img/act1-2.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-3.jpg'><img src='assets/img/act1-3.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-4.jpg'><img src='assets/img/act1-4.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-5.jpg'><img src='assets/img/act1-5.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-6.jpg'><img src='assets/img/act1-6.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a><a href='assets/img/act1-7.jpg'><img src='assets/img/act1-7.jpg' alt='Volunteering at the National Children&#x27;s Hospital (2026)' loading='lazy'></a></div></div><div class='card reveal'><h3>Tuyên Quang Excursion 2026</h3><p>An extracurricular excursion to Tuyên Quang with students from many schools: hall seminars, exchange sessions and team-building activities.</p><div class='gallery'><a href='assets/img/act2-0.jpg'><img src='assets/img/act2-0.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-1.jpg'><img src='assets/img/act2-1.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-2.jpg'><img src='assets/img/act2-2.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-3.jpg'><img src='assets/img/act2-3.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-4.jpg'><img src='assets/img/act2-4.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-5.jpg'><img src='assets/img/act2-5.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-6.jpg'><img src='assets/img/act2-6.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-7.jpg'><img src='assets/img/act2-7.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-8.jpg'><img src='assets/img/act2-8.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-9.jpg'><img src='assets/img/act2-9.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act2-10.jpg'><img src='assets/img/act2-10.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a></div></div></div></section><div class='twocol'><section id='skills-en'><h2>Skills</h2><div class='card reveal'><div class='skillgrid' style='grid-template-columns:1fr'><div class='skill'><span>C++ &amp; competitive programming<em>95%</em></span><div class='bar'><i style='width:95%'></i></div></div><div class='skill'><span>Algorithms &amp; data structures<em>92%</em></span><div class='bar'><i style='width:92%'></i></div></div><div class='skill'><span>Python<em>75%</em></span><div class='bar'><i style='width:75%'></i></div></div><div class='skill'><span>Problem solving<em>90%</em></span><div class='bar'><i style='width:90%'></i></div></div><div class='skill'><span>IoT system design<em>70%</em></span><div class='bar'><i style='width:70%'></i></div></div></div><a href='assets/img/skill-radar.jpg'><img class='certimg' style='max-width:100%;margin-top:20px' src='assets/img/skill-radar.jpg' alt='skill radar' loading='lazy'></a></div></section><section><h2>Interests</h2><div class='card'><div class='chips'><span>Competitive programming</span><span>Road safety</span><span>Applied AI</span><span>Volunteering</span></div></div><h2 style='margin-top:26px'>Future Goals</h2><div class='card'><p style='margin-top:0'>My near-term goal is a spot on the national Informatics olympiad team. Longer term, I want to study Computer Science and turn my AI + IoT car-safety system from a design into a working prototype.</p></div></section></div></main><footer>© 2026 Nguyễn Việt Anh · Student Portfolio</footer></div><script>function setLang(l,save){document.body.classList.toggle('lang-en',l==='en');document.documentElement.lang=l;if(save){try{localStorage.setItem('plang',l)}catch(e){}}document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});}document.querySelectorAll('.lbtn').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l,true)})});var saved='en';try{saved=localStorage.getItem('plang')||'en'}catch(e){}setLang(saved,false);var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img>';document.body.appendChild(lb);lb.addEventListener('click',function(){lb.classList.remove('open')});document.querySelectorAll('.gallery a,.awthumb').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();lb.querySelector('img').src=a.getAttribute('href');lb.classList.add('open')})});</script></body></html>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <span class="mk">VA</span>
+      <span>Nguyễn Việt Anh<small>INFORMATICS &amp; AI/IoT</small></span>
+    </a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger">&#9776;</button>
+    <nav class="mainnav" id="nav">
+      <a href="#about"      ><span data-en>About</span><span data-vi>Giới thiệu</span></a>
+      <a href="#project"    ><span data-en>Project</span><span data-vi>Sản phẩm</span></a>
+      <a href="#awards"     ><span data-en>Awards</span><span data-vi>Thành tích</span></a>
+      <a href="#activities" ><span data-en>Activities</span><span data-vi>Ngoại khóa</span></a>
+      <a href="#journey"    ><span data-en>Journey</span><span data-vi>Hành trình</span></a>
+      <a href="#contact"    ><span data-en>Contact</span><span data-vi>Liên hệ</span></a>
+    </nav>
+    <button class="langbtn" id="lang">EN</button>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <img class="avatar" src="assets/img/avatar.jpg" alt="Nguyễn Việt Anh">
+    <div>
+      <span class="kicker">
+        <span data-en>Student portfolio &middot; Class of 2027</span><span data-vi>Hồ sơ học sinh &middot; Khóa 2027</span>
+      </span>
+      <h1>Nguyễn Việt <em>Anh</em></h1>
+      <p class="role">
+        <span data-en>Informatics-track student and competitive programmer building <b>GuardianDrive AI</b> — a driver-safety system fusing computer vision and IoT sensors to catch fatigue, forgotten children and collision risk before they become accidents.</span><span data-vi>Học sinh chuyên Tin, theo lập trình thi đấu, đang xây dựng <b>GuardianDrive AI</b> — hệ thống an toàn ô tô kết hợp thị giác máy tính và cảm biến IoT để phát hiện tài xế buồn ngủ, trẻ bị bỏ quên trên xe và nguy cơ va chạm trước khi tai nạn xảy ra.</span>
+      </p>
+      <p class="school">
+        <span data-en>Hanoi &ndash; Amsterdam High School for the Gifted &middot; Class 12 Informatics 1</span><span data-vi>THPT Chuyên Hà Nội &ndash; Amsterdam &middot; Lớp 12 Tin 1</span>
+      </p>
+      <div class="cta">
+        <a class="btn pri" href="#project"><span data-en>View GuardianDrive AI &rarr;</span><span data-vi>Xem dự án GuardianDrive AI &rarr;</span></a>
+        <a class="btn" href="#awards"><span data-en>Awards &amp; honors</span><span data-vi>Thành tích &amp; giải thưởng</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stat"><b class="g">Gold</b><span data-en>HSGS Olympiad 2025</span><span data-vi>HCV HSGS Olympiad 2025</span></div>
+    <div class="stat"><b>2</b><span data-en>Int&#39;l awards 2026</span><span data-vi>Giải quốc tế 2026</span></div>
+    <div class="stat"><b class="l">6</b><span data-en>Awards &amp; honors</span><span data-vi>Giải thưởng &amp; danh hiệu</span></div>
+    <div class="stat"><b class="l">1</b><span data-en>Personal AI/IoT product</span><span data-vi>Sản phẩm AI/IoT cá nhân</span></div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="eyebrow">01 &mdash; <span data-en>About</span><span data-vi>Giới thiệu</span></div>
+      <h2><span data-en>Who I am</span><span data-vi>Mình là ai</span></h2>
+    </div>
+    <div class="grid2">
+      <div class="card rv">
+        <p style="margin-top:0">
+          <span data-en>I am <b>Nguyễn Việt Anh</b>, a <b>grade 12 Informatics 1</b> student at Hanoi &ndash; Amsterdam High School for the Gifted. I have pursued competitive programming since middle school and now split my time between algorithm contests and building AI + IoT hardware.</span><span data-vi>Mình là <b>Nguyễn Việt Anh</b>, học sinh lớp <b>12 Tin 1</b>, trường THPT Chuyên Hà Nội &ndash; Amsterdam. Mình theo lập trình thi đấu từ THCS, và giờ chia thời gian giữa các kỳ thi thuật toán và xây dựng phần cứng AI + IoT.</span>
+        </p>
+        <p>
+          <span data-en>Competitive programming trained me to break a hard problem down until it is solvable; I apply the same habit to engineering &mdash; my project GuardianDrive AI started as a design document and is now a working prototype that reads a driver's face in real time.</span><span data-vi>Lập trình thi đấu rèn cho mình thói quen chia nhỏ một bài toán khó đến khi giải được; mình áp dụng chính thói quen đó vào kỹ thuật &mdash; dự án GuardianDrive AI bắt đầu từ một bản thiết kế và giờ đã là nguyên mẫu chạy thời gian thực, đọc được trạng thái khuôn mặt tài xế.</span>
+        </p>
+        <div class="quote">
+          <span data-en>&ldquo;Every hard problem has a solution &mdash; you just need the patience to debug it.&rdquo;</span><span data-vi>&ldquo;Mọi bài toán khó đều có lời giải &mdash; chỉ cần đủ kiên nhẫn để debug.&rdquo;</span>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3><span data-en>Profile at a glance</span><span data-vi>Thông tin hồ sơ</span></h3>
+        <ul style="list-style:none;margin-left:0">
+          <li><span class="meta" data-vi>Trường &amp; lớp</span><span class="meta" data-en>School &amp; class</span><br><span data-en>Hanoi &ndash; Amsterdam High School for the Gifted &mdash; 12 Informatics 1</span><span data-vi>THPT Chuyên Hà Nội &ndash; Amsterdam &mdash; 12 Tin 1</span></li>
+          <li><span class="meta" data-vi>Ngành định hướng</span><span class="meta" data-en>Intended major</span><br><span data-en>Computer Science</span><span data-vi>Khoa học Máy tính</span></li>
+          <li><span class="meta" data-vi>Trọng tâm</span><span class="meta" data-en>Focus areas</span><br><span data-en>Competitive programming, computer vision, embedded IoT</span><span data-vi>Lập trình thi đấu, thị giác máy tính, IoT nhúng</span></li>
+          <li><span class="meta" data-vi>Sản phẩm cá nhân</span><span class="meta" data-en>Personal product</span><br>GuardianDrive AI</li>
+        </ul>
+        <div class="tags">
+          <span>C++</span><span>Python</span><span>OpenCV</span><span>PyTorch</span><span>Arduino / ESP32</span>
+        </div>
+        <div class="chips" style="margin-top:14px">
+          <span data-en>Competitive programming</span><span data-vi>Lập trình thi đấu</span>
+          <span data-en>Computer vision</span><span data-vi>Thị giác máy tính</span>
+          <span data-en>Road safety</span><span data-vi>An toàn giao thông</span>
+          <span data-en>Applied AI</span><span data-vi>AI ứng dụng</span>
+          <span data-en>Volunteering</span><span data-vi>Thiện nguyện</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT ================= -->
+<section id="project">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="eyebrow">02 &mdash; <span data-en>Personal product &amp; research</span><span data-vi>Sản phẩm cá nhân &amp; nghiên cứu</span></div>
+      <h2>GuardianDrive AI</h2>
+      <p class="lead">
+        <span data-en>An integrated vision + IoT safety system for cars: it watches the driver for fatigue, the cabin for a forgotten child or hazardous air, and the road ahead for collision risk &mdash; on one shared device instead of three separate products.</span><span data-vi>Hệ thống an toàn ô tô tích hợp thị giác máy tính + IoT: theo dõi tài xế để phát hiện mệt mỏi, giám sát khoang xe để phát hiện trẻ bị bỏ quên hoặc không khí nguy hiểm, và cảnh báo va chạm phía trước &mdash; tất cả trên một thiết bị duy nhất thay vì ba sản phẩm tách rời.</span>
+      </p>
+    </div>
+
+    <div class="card rv" style="border-left:3px solid var(--cy)">
+      <div class="meta"><span data-en>Technical paper &middot; self-authored</span><span data-vi>Bài báo kỹ thuật &middot; tự viết</span> &middot; Class 12 Informatics 1, Hanoi &ndash; Amsterdam HSG &middot; 2026</div>
+      <h3 style="margin-top:8px">GuardianDrive AI: An Integrated Vision and IoT Safety System for Driver State, Cabin Occupancy, and Surround Hazard Awareness</h3>
+      <p>
+        <span data-en>The system runs three sensing layers into one alert policy. <b>Layer 1 (driver state)</b>: a camera plus low-light enhancement locates 68 facial landmarks in real time, from which Eye/Mouth Aspect Ratio and head pose flag drowsiness and yawning &mdash; tracking holds up at night, with a face mask, or with sunglasses on. <b>Layer 2 (cabin)</b>: mmWave radar, alcohol/smoke/CO&#8322;/temperature sensors watch for a child left behind or hazardous cabin air, following the timing rules of the Euro NCAP 2026 child-presence protocol. <b>Layer 3 (surround)</b>: a forward camera and ultrasonic sensors estimate time-to-collision. The key idea tying them together: the collision-warning threshold is not fixed &mdash; it fires earlier when the driver is measurably drowsy.</span><span data-vi>Hệ thống chạy ba lớp cảm biến, gộp về một chính sách cảnh báo. <b>Lớp 1 (trạng thái tài xế)</b>: camera kết hợp tăng cường ảnh thiếu sáng định vị 68 điểm mốc khuôn mặt theo thời gian thực, từ đó tính Eye/Mouth Aspect Ratio và góc nghiêng đầu để phát hiện buồn ngủ, ngáp &mdash; vẫn hoạt động ổn định vào ban đêm, khi đeo khẩu trang hoặc kính râm. <b>Lớp 2 (khoang xe)</b>: radar mmWave, cảm biến cồn/khói/CO&#8322;/nhiệt độ phát hiện trẻ bị bỏ quên hoặc không khí nguy hiểm trong khoang, theo đúng mốc thời gian của tiêu chuẩn Euro NCAP 2026 về phát hiện trẻ trong xe. <b>Lớp 3 (xung quanh xe)</b>: camera phía trước và cảm biến siêu âm ước tính thời gian tới va chạm. Điểm mấu chốt: ngưỡng cảnh báo va chạm không cố định &mdash; cảnh báo sẽ đến sớm hơn khi tài xế đo được là đang buồn ngủ.</span>
+      </p>
+      <p style="margin-top:10px;font-size:.9rem;color:var(--dim)">
+        <span data-en>The driver-monitoring layer (Layer 1) runs in real time on a laptop today; the cabin and surround layers are bench-tested individually and not yet wired into the shared alert policy.</span><span data-vi>Lớp giám sát tài xế (Lớp 1) đã chạy thời gian thực trên laptop; lớp khoang xe và lớp xung quanh xe mới kiểm thử riêng lẻ trên bàn, chưa tích hợp chung vào chính sách cảnh báo.</span>
+      </p>
+      <div class="tags">
+        <span>Computer Vision</span><span>Facial Landmarks</span><span>YOLO</span><span>OpenCV</span><span>PyTorch</span><span>IoT</span><span>Arduino / ESP32</span><span>Euro NCAP 2026</span>
+      </div>
+    </div>
+
+    <div class="grid2" style="align-items:start;margin-top:18px">
+      <div class="card rv">
+        <h3><span data-en>Live dashboard</span><span data-vi>Dashboard theo thời gian thực</span></h3>
+        <p><span data-en>Eye-aspect-ratio and head-pitch traces track driver alertness frame by frame; cabin panels stream temperature, CO&#8322;, smoke and alcohol readings alongside engine and door state.</span><span data-vi>Đồ thị EAR (độ mở mắt) và góc ngẩng đầu theo dõi mức độ tỉnh táo của tài xế theo từng khung hình; các bảng khoang xe hiển thị nhiệt độ, CO&#8322;, khói và nồng độ cồn cùng trạng thái động cơ và cửa xe.</span></p>
+        <a href="assets/img/guardiandrive-dashboard.jpg" data-lb>
+          <img src="assets/img/guardiandrive-dashboard.jpg" alt="GuardianDrive AI live dashboard" style="border-radius:10px;border:1px solid var(--line);width:100%;margin-top:14px;cursor:zoom-in">
+        </a>
+      </div>
+      <div class="card rv">
+        <h3><span data-en>Demo video</span><span data-vi>Video demo</span></h3>
+        <p><span data-en>Prototype walkthrough: driver drowsiness detection running live, plus the cabin sensor readouts.</span><span data-vi>Video giới thiệu nguyên mẫu: phát hiện buồn ngủ tài xế chạy trực tiếp, cùng các chỉ số cảm biến khoang xe.</span></p>
+        <div style="margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9">
+          <iframe src="https://drive.google.com/file/d/1bbzQ94TayAecs0c3SIKEx4QeHELcklKK/preview" width="100%" height="100%" style="border:0;display:block" allow="autoplay" loading="lazy"></iframe>
+        </div>
+        <p style="margin-top:12px">
+          <a class="btn" href="https://drive.google.com/file/d/1bbzQ94TayAecs0c3SIKEx4QeHELcklKK/view" target="_blank" rel="noopener">
+            <span data-en>Open in Google Drive &rarr;</span><span data-vi>Mở trên Google Drive &rarr;</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AWARDS ================= -->
+<section id="awards">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="eyebrow">03 &mdash; <span data-en>Honors</span><span data-vi>Thành tích</span></div>
+      <h2><span data-en>Awards &amp; honors</span><span data-vi>Giải thưởng &amp; danh hiệu</span></h2>
+    </div>
+    <div class="grid2" style="align-items:start">
+      <div class="award sp rv">
+        <div class="medal">&#127942;</div>
+        <div>
+          <div class="rank">Gold Award &middot; International</div>
+          <h3 style="margin-top:4px">AI-JAM US 2026 &mdash; 11th International AI Invention Challenge</h3>
+          <p><span data-en>Gold Award for <i>&ldquo;MediCare Hub &mdash; All-in-One Smart Home Healthcare Ecosystem&rdquo;</i>.</span><span data-vi>Giải Vàng với dự án <i>&ldquo;MediCare Hub &mdash; All-in-One Smart Home Healthcare Ecosystem&rdquo;</i>.</span></p>
+          <div class="meta" style="margin-top:8px">09/2026</div>
+          <div style="margin-top:14px;max-width:320px"><img src="assets/img/award-gold-award-ai-jam-us-2026-medicare-hub.jpg" alt="AI-JAM US 2026 Gold Award" style="border-radius:10px;border:1px solid var(--line);width:100%;height:220px;object-fit:cover;object-position:top"></div>
+        </div>
+      </div>
+      <div class="award sp rv">
+        <div class="medal">&#127942;</div>
+        <div>
+          <div class="rank">Grand Prix &middot; International</div>
+          <h3 style="margin-top:4px">AXGO &mdash; AX Global Olympiad 2026</h3>
+          <p><span data-en>Grand Prix Award for <i>&ldquo;AI Table Tennis Coach&rdquo;</i>.</span><span data-vi>Giải Grand Prix với dự án <i>&ldquo;AI Table Tennis Coach&rdquo;</i>.</span></p>
+          <div class="meta" style="margin-top:8px">07/2026</div>
+          <div style="margin-top:14px;max-width:320px"><img src="assets/img/award-grand-prix-award-axgo-2026-ai-table-tennis-coach.jpg" alt="AXGO 2026 Grand Prix" style="border-radius:10px;border:1px solid var(--line);width:100%;height:220px;object-fit:cover;object-position:top"></div>
+        </div>
+      </div>
+      <div class="award rv">
+        <div class="medal">&#129351;</div>
+        <div>
+          <div class="rank"><span data-en>Gold medal</span><span data-vi>Huy chương Vàng</span></div>
+          <h3 style="margin-top:4px"><span data-en>Informatics &mdash; HSGS Olympiad</span><span data-vi>Môn Tin học &mdash; HSGS Olympiad</span></h3>
+          <div class="meta" style="margin-top:8px">HSGS &amp; VNU University of Science &middot; 05/2025</div>
+          <div style="margin-top:14px;max-width:320px"><img src="assets/img/award-huy-chuong-vang-mon-tin-hoc-hsgs-olympiad-olympic-.jpg" alt="HSGS Olympiad Gold Medal" style="border-radius:10px;border:1px solid var(--line);width:100%;height:220px;object-fit:cover;object-position:top"></div>
+        </div>
+      </div>
+      <div class="award rv">
+        <div class="medal">&#129352;</div>
+        <div>
+          <div class="rank"><span data-en>Third prize</span><span data-vi>Giải Ba</span></div>
+          <h3 style="margin-top:4px"><span data-en>Hanoi City Excellent-Student Contest, Grade-12 Informatics</span><span data-vi>HSG Thành phố Hà Nội, môn Tin học lớp 12</span></h3>
+          <div class="meta" style="margin-top:8px"><span data-en>Hanoi Dept. of Education &amp; Training &middot; achieved in grade 11 &middot; 2025&ndash;2026</span><span data-vi>Sở GD&amp;ĐT Hà Nội &middot; đạt khi đang học lớp 11 &middot; 2025&ndash;2026</span></div>
+          <div style="margin-top:14px;max-width:320px"><img src="assets/img/award-giai-ba-ky-thi-chon-hsg-thanh-pho-cac-mon-van-hoa-.jpg" alt="Hanoi City 3rd Prize" style="border-radius:10px;border:1px solid var(--line);width:100%;height:220px;object-fit:cover;object-position:top"></div>
+        </div>
+      </div>
+      <div class="award rv">
+        <div class="medal">&#129352;</div>
+        <div>
+          <div class="rank"><span data-en>Third prize</span><span data-vi>Giải Ba</span></div>
+          <h3 style="margin-top:4px"><span data-en>VNU Hanoi High-School Olympiad in Informatics</span><span data-vi>Olympic bậc THPT của ĐHQG Hà Nội, môn Tin học</span></h3>
+          <div class="meta" style="margin-top:8px"><span data-en>Vietnam National University, Hanoi &middot; 2025&ndash;2026</span><span data-vi>ĐHQG Hà Nội &middot; 2025&ndash;2026</span></div>
+        </div>
+      </div>
+      <div class="award rv">
+        <div class="medal">&#129353;</div>
+        <div>
+          <div class="rank"><span data-en>Second prize</span><span data-vi>Giải Nhì</span></div>
+          <h3 style="margin-top:4px"><span data-en>District Excellent-Student Contest in Informatics</span><span data-vi>HSG cấp quận môn Tin học</span></h3>
+          <div class="meta" style="margin-top:8px"><span data-en>Cau Giay District &middot; Archimedes Academy &middot; 2023&ndash;2024</span><span data-vi>Quận Cầu Giấy &middot; THCS Archimedes Academy &middot; 2023&ndash;2024</span></div>
+          <div style="margin-top:14px;max-width:320px"><img src="assets/img/award-giai-nhi-ky-thi-hsg-cap-quan-mon-tin-hoc-2023-2024.jpg" alt="District 2nd Prize" style="border-radius:10px;border:1px solid var(--line);width:100%;height:220px;object-fit:cover;object-position:top"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACTIVITIES ================= -->
+<section id="activities">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="eyebrow">04 &mdash; <span data-en>Service &amp; community</span><span data-vi>Ngoại khóa &amp; cộng đồng</span></div>
+      <h2><span data-en>Community work</span><span data-vi>Hoạt động cộng đồng</span></h2>
+    </div>
+
+    <div class="card rv">
+      <div class="meta">2026</div>
+      <h3 style="margin-top:6px"><span data-en>Volunteering at the National Children's Hospital</span><span data-vi>Thiện nguyện tại Bệnh viện Nhi Trung ương</span></h3>
+      <p><span data-en>Visiting, bringing gifts and running activities for children in treatment at the National Children's Hospital, Hanoi.</span><span data-vi>Thăm hỏi, tặng quà và tổ chức hoạt động cho các bệnh nhi đang điều trị tại Bệnh viện Nhi Trung ương, Hà Nội.</span></p>
+      <div class='gal'><a href='assets/img/act1-0.jpg' data-lb><img src='assets/img/act1-0.jpg' alt='Benh vien Nhi Trung uong 1' loading='lazy'></a><a href='assets/img/act1-1.jpg' data-lb><img src='assets/img/act1-1.jpg' alt='Benh vien Nhi Trung uong 2' loading='lazy'></a><a href='assets/img/act1-2.jpg' data-lb><img src='assets/img/act1-2.jpg' alt='Benh vien Nhi Trung uong 3' loading='lazy'></a><a href='assets/img/act1-3.jpg' data-lb><img src='assets/img/act1-3.jpg' alt='Benh vien Nhi Trung uong 4' loading='lazy'></a><a href='assets/img/act1-4.jpg' data-lb><img src='assets/img/act1-4.jpg' alt='Benh vien Nhi Trung uong 5' loading='lazy'></a><a href='assets/img/act1-5.jpg' data-lb><img src='assets/img/act1-5.jpg' alt='Benh vien Nhi Trung uong 6' loading='lazy'></a><a href='assets/img/act1-6.jpg' data-lb><img src='assets/img/act1-6.jpg' alt='Benh vien Nhi Trung uong 7' loading='lazy'></a><a href='assets/img/act1-7.jpg' data-lb><img src='assets/img/act1-7.jpg' alt='Benh vien Nhi Trung uong 8' loading='lazy'></a></div>
+    </div>
+
+    <div class="card rv" style="margin-top:18px">
+      <div class="meta">2026</div>
+      <h3 style="margin-top:6px"><span data-en>Tuyên Quang Excursion 2026</span><span data-vi>Trải nghiệm ngoại khóa Tuyên Quang 2026</span></h3>
+      <p><span data-en>Inter-school excursion to Tuyên Quang: hall seminars, exchange sessions and team-building activities with students from several schools.</span><span data-vi>Chuyến trải nghiệm ngoại khóa tại Tuyên Quang: sinh hoạt chuyên đề tại hội trường, giao lưu và hoạt động làm việc nhóm cùng học sinh nhiều trường.</span></p>
+      <div class='gal'><a href='assets/img/act2-0.jpg' data-lb><img src='assets/img/act2-0.jpg' alt='Tuyen Quang 2026 1' loading='lazy'></a><a href='assets/img/act2-1.jpg' data-lb><img src='assets/img/act2-1.jpg' alt='Tuyen Quang 2026 2' loading='lazy'></a><a href='assets/img/act2-2.jpg' data-lb><img src='assets/img/act2-2.jpg' alt='Tuyen Quang 2026 3' loading='lazy'></a><a href='assets/img/act2-3.jpg' data-lb><img src='assets/img/act2-3.jpg' alt='Tuyen Quang 2026 4' loading='lazy'></a><a href='assets/img/act2-4.jpg' data-lb><img src='assets/img/act2-4.jpg' alt='Tuyen Quang 2026 5' loading='lazy'></a><a href='assets/img/act2-5.jpg' data-lb><img src='assets/img/act2-5.jpg' alt='Tuyen Quang 2026 6' loading='lazy'></a><a href='assets/img/act2-6.jpg' data-lb><img src='assets/img/act2-6.jpg' alt='Tuyen Quang 2026 7' loading='lazy'></a><a href='assets/img/act2-7.jpg' data-lb><img src='assets/img/act2-7.jpg' alt='Tuyen Quang 2026 8' loading='lazy'></a><a href='assets/img/act2-8.jpg' data-lb><img src='assets/img/act2-8.jpg' alt='Tuyen Quang 2026 9' loading='lazy'></a><a href='assets/img/act2-9.jpg' data-lb><img src='assets/img/act2-9.jpg' alt='Tuyen Quang 2026 10' loading='lazy'></a><a href='assets/img/act2-10.jpg' data-lb><img src='assets/img/act2-10.jpg' alt='Tuyen Quang 2026 11' loading='lazy'></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="eyebrow">05 &mdash; <span data-en>Journey</span><span data-vi>Hành trình</span></div>
+      <h2><span data-en>From district contest to Grand Prix</span><span data-vi>Từ HSG cấp quận đến Grand Prix</span></h2>
+    </div>
+    <div class="tl rv">
+      <div class="it">
+        <div class="yr">2023</div>
+        <h3><span data-en>First Informatics prize</span><span data-vi>Giải Tin học đầu tiên</span></h3>
+        <p><span data-en>Second Prize at the district Informatics contest (Cau Giay), grade 9, Archimedes Academy.</span><span data-vi>Giải Nhì kỳ thi HSG cấp quận môn Tin học (Cầu Giấy) khi học lớp 9 tại THCS Archimedes Academy.</span></p>
+      </div>
+      <div class="it">
+        <div class="yr">2024</div>
+        <h3><span data-en>Admitted to Ams</span><span data-vi>Trúng tuyển Ams</span></h3>
+        <p><span data-en>Admitted to the Informatics-major class at Hanoi &ndash; Amsterdam High School for the Gifted.</span><span data-vi>Trúng tuyển lớp chuyên Tin, THPT Chuyên Hà Nội &ndash; Amsterdam.</span></p>
+      </div>
+      <div class="it">
+        <div class="yr">2025</div>
+        <h3><span data-en>Gold at HSGS Olympiad</span><span data-vi>Vàng HSGS Olympiad</span></h3>
+        <p><span data-en>Gold Medal in Informatics at the HSGS Olympiad; Third Prize at the Hanoi City grade-12 Informatics contest while still in grade 11.</span><span data-vi>Huy chương Vàng môn Tin học tại HSGS Olympiad; Giải Ba HSG Thành phố lớp 12 môn Tin học khi đang học lớp 11.</span></p>
+      </div>
+      <div class="it">
+        <div class="yr">2026</div>
+        <h3><span data-en>GuardianDrive AI &amp; two international awards</span><span data-vi>GuardianDrive AI &amp; hai giải quốc tế</span></h3>
+        <p><span data-en>Third Prize at the VNU Hanoi Olympiad; volunteered at the National Children's Hospital and on the Tuyên Quang excursion; Grand Prix at AXGO 2026 with &ldquo;AI Table Tennis Coach&rdquo;; Gold Award at AI-JAM US with &ldquo;MediCare Hub&rdquo;; built and wrote up GuardianDrive AI, now in grade 12.</span><span data-vi>Giải Ba Olympic ĐHQG Hà Nội; thiện nguyện tại Bệnh viện Nhi Trung ương và chuyến Tuyên Quang; Grand Prix AXGO 2026 với &ldquo;AI Table Tennis Coach&rdquo;; Gold Award AI-JAM US với &ldquo;MediCare Hub&rdquo;; xây dựng và viết bài về GuardianDrive AI, hiện học lớp 12.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4><span data-en>Contact</span><span data-vi>Liên hệ</span></h4>
+        <h3 style="font-size:1.4rem"><span data-en>Thank you for reading my portfolio.</span><span data-vi>Cảm ơn bạn đã ghé xem hồ sơ của mình.</span></h3>
+        <p style="color:var(--mute);margin-top:10px;font-size:.95rem">
+          <span data-en>I am always glad to talk about competitive programming, computer vision or AI/IoT engineering projects.</span><span data-vi>Mình luôn vui khi được trao đổi về lập trình thi đấu, thị giác máy tính hoặc các dự án kỹ thuật AI/IoT.</span>
+        </p>
+      </div>
+      <div>
+        <h4><span data-en>Pages</span><span data-vi>Trang</span></h4>
+        <ul>
+          <li><a href="#about"><span data-en>About</span><span data-vi>Giới thiệu</span></a></li>
+          <li><a href="#project"><span data-en>Project</span><span data-vi>Sản phẩm</span></a></li>
+          <li><a href="#awards"><span data-en>Awards</span><span data-vi>Thành tích</span></a></li>
+          <li><a href="#activities"><span data-en>Activities</span><span data-vi>Ngoại khóa</span></a></li>
+          <li><a href="#journey"><span data-en>Journey</span><span data-vi>Hành trình</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-en>Project links</span><span data-vi>Liên kết dự án</span></h4>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1bbzQ94TayAecs0c3SIKEx4QeHELcklKK/view" target="_blank" rel="noopener"><span data-en>GuardianDrive AI demo video</span><span data-vi>Video demo GuardianDrive AI</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; 2026 Nguyễn Việt Anh</span>
+      <span>Hanoi &ndash; Amsterdam &middot; Informatics &middot; Hà Nội, Việt Nam</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <button class="x" id="lbx" aria-label="Close">&times;</button>
+  <button class="p" id="lbp" aria-label="Previous">&#8249;</button>
+  <img id="lbi" src="" alt="">
+  <button class="n" id="lbn" aria-label="Next">&#8250;</button>
+</div>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
